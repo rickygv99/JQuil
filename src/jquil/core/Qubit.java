@@ -59,8 +59,8 @@ public class Qubit {
     /**
      * Measures the qubit in the basis provided by the user. Returns the state
      * that the qubit is measured in. Returns null if the qubit is not measured
-     * to be in any state. Also transforms the qubit to be in the state that it is
-     * measured into.
+     * to be in any state. Also transforms the qubit to be in the state that it
+     * is measured into.
      *
      * @param b
      * @return
@@ -80,7 +80,8 @@ public class Qubit {
 
     /**
      * Applies the quantum gate represented by the matrix m to the qubit.
-     * @param m 
+     *
+     * @param m
      */
     public void applyGate(Matrix m) {
         for (int i = 0; i < states.length; i++) {
@@ -90,7 +91,8 @@ public class Qubit {
 
     /**
      * Sets the states of the qubit.
-     * @param states 
+     *
+     * @param states
      */
     public void setStates(Vector... states) {
         this.states = Arrays.copyOf(states, states.length);
@@ -98,7 +100,8 @@ public class Qubit {
 
     /**
      * Returns an array of vectors representing the states of the qubit.
-     * @return 
+     *
+     * @return
      */
     public Vector[] getStates() {
         return states;
@@ -106,7 +109,8 @@ public class Qubit {
 
     /**
      * Returns the number of states of the qubit.
-     * @return 
+     *
+     * @return
      */
     public int getNumStates() {
         return states.length;

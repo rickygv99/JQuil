@@ -41,7 +41,8 @@ public class Vector extends Matrix {
 
     /**
      * Returns the magnitude of the vector.
-     * @return 
+     *
+     * @return
      */
     public double getMagnitude() {
         double sumSquared = 0;
@@ -60,8 +61,9 @@ public class Vector extends Matrix {
 
     /**
      * Takes as input a vector v. Returns the normalized form of the vector.
+     *
      * @param v
-     * @return 
+     * @return
      */
     public static Vector getNormalizedVector(Vector v) {
         Vector copy = (Vector) v.getCopy();
@@ -70,11 +72,11 @@ public class Vector extends Matrix {
     }
 
     /**
-     * Takes as input a vector s. Performs the inner product operation on
-     * the current vector and the vector s. Returns the calculated inner
-     * product.
+     * Takes as input a vector s. Performs the inner product operation on the
+     * current vector and the vector s. Returns the calculated inner product.
+     *
      * @param s
-     * @return 
+     * @return
      */
     public ComplexNumber getInnerProduct(Vector s) {
         if (size != s.getSize()) {
@@ -90,8 +92,9 @@ public class Vector extends Matrix {
     /**
      * Takes as input a vector s. Returns true if the current vector is
      * orthogonal to s and false otherwise.
+     *
      * @param s
-     * @return 
+     * @return
      */
     public boolean isOrthogonalTo(Vector s) {
         return getInnerProduct(s).equals(ComplexNumber.ZERO);
@@ -100,18 +103,20 @@ public class Vector extends Matrix {
     /**
      * Takes as input a vector s. Returns true if the current vector is
      * orthonormal to s and false otherwise.
+     *
      * @param s
-     * @return 
+     * @return
      */
     public boolean isOrthonormalTo(Vector s) {
         return isOrthogonalTo(s) && isUnitVector() && s.isUnitVector();
     }
 
     /**
-     * Takes as input a vector s. Returns true if the current vector is
-     * opposite to s and false otherwise.
+     * Takes as input a vector s. Returns true if the current vector is opposite
+     * to s and false otherwise.
+     *
      * @param s
-     * @return 
+     * @return
      */
     public boolean isOppositeTo(Vector s) {
         Vector negation = (Vector) s.getCopy();
@@ -121,7 +126,8 @@ public class Vector extends Matrix {
 
     /**
      * Returns true if the vector is a unit vector and false otherwise.
-     * @return 
+     *
+     * @return
      */
     public boolean isUnitVector() {
         return DoubleMath.compare(getMagnitude(), 1) == 0;
@@ -129,7 +135,8 @@ public class Vector extends Matrix {
 
     /**
      * Returns true if the vector is a zero vector and false otherwise.
-     * @return 
+     *
+     * @return
      */
     public boolean isZeroVector() {
         return DoubleMath.compare(getMagnitude(), 0) == 0;
@@ -137,7 +144,8 @@ public class Vector extends Matrix {
 
     /**
      * Returns the size of the matrix.
-     * @return 
+     *
+     * @return
      */
     public int getSize() {
         return size;
@@ -146,17 +154,19 @@ public class Vector extends Matrix {
     /**
      * Takes as input a size and sets the size of the matrix to the inputted
      * size.
-     * @param size 
+     *
+     * @param size
      */
     public void setSize(int size) {
         this.size = size;
     }
 
     /**
-     * Takes as input an index of the vector. Returns the value in that
-     * index of the vector.
+     * Takes as input an index of the vector. Returns the value in that index of
+     * the vector.
+     *
      * @param index
-     * @return 
+     * @return
      */
     public ComplexNumber getValue(int index) {
         return getValue(index, 0);
@@ -165,10 +175,22 @@ public class Vector extends Matrix {
     /**
      * Takes as input an index of the vector and a value. Sets the corresponding
      * index of the vector to the inputted value.
+     *
      * @param index
-     * @param value 
+     * @param value
      */
     public void setValue(int index, ComplexNumber value) {
+        setValue(index, 0, value);
+    }
+
+    /**
+     * Takes as input an index of the vector and a value. Sets the corresponding
+     * index of the vector to the inputted value.
+     *
+     * @param index
+     * @param value
+     */
+    public void setValue(int index, double value) {
         setValue(index, 0, value);
     }
 
